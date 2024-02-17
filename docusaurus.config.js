@@ -1,5 +1,6 @@
 import versions from "./versions.json";
-import redirects from "./old_site_redirects.js";
+import redirects from "./redirects.js";
+import old_site_redirects from "./old_site_redirects.js";
 import captionedCode from "./src/remark/captioned-code.js";
 import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 import fs from "fs";
@@ -369,7 +370,7 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects,
+        redirects: old_site_redirects.concat(redirects),
       },
     ],
   ],
